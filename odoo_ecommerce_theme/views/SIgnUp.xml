@@ -1,0 +1,305 @@
+<odoo>
+     <template id="custom_auth_signup_signup" inherit_id="auth_signup.signup">
+    <xpath expr="//t[@t-call='web.login_layout']" position="replace">
+        <t t-call="web.login_layout">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+/* General styles */
+.border {
+    border-radius: 10px;
+    width: 130%;
+    margin-left: -20%;
+}
+
+@media screen and (max-width: 767px) {
+    /* Styles for screens up to 767px wide */
+    .border {
+        width: 90%;
+        margin-left: 0px;
+    }
+    .img-fluid {
+        width: 30px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .oe_signup_form{
+        margin-right:36px;
+    }
+}
+
+
+<!--@media screen  and (max-width: 1000px) {-->
+<!--    /* Styles for screens between 768px and 1000px wide */-->
+<!--    .one {-->
+<!--        display: none;-->
+<!--    }-->
+<!--    .col-two {-->
+<!--        height: 600px !important;-->
+<!--        margin-left: 12px;-->
+<!--        display: flex;-->
+<!--        align-items: center;-->
+<!--        justify-content: center;-->
+<!--    }-->
+<!--    .oe_signup_form {-->
+<!--        max-width: 100% !important;-->
+<!--        padding: 20px;-->
+<!--        margin: auto;-->
+<!--    }-->
+<!--}-->
+
+<!--@media screen and (min-width: 1001px) {-->
+<!--    /* Styles for screens wider than 1000px */-->
+<!--    .oe_signup_form {-->
+<!--        max-width: 400px !important;-->
+<!--    }-->
+<!--    .col-two {-->
+<!--        height: 80vh; /* Set the height to 80% of the viewport height */-->
+<!--        overflow-y: auto; /* Allow vertical scrolling if content exceeds height */-->
+<!--    }-->
+<!--}-->
+
+</style>
+
+            <div class="row">
+                <!-- Left side: Image -->
+
+                <!-- Right side: Signup form -->
+                <div class="col-md-12 col-two" style="overflow-y: scroll !important;--tw-bg-opacity: 1;
+    background-color: rgb(250 250 250 / var(--tw-bg-opacity));">
+
+                    <form class="oe_signup_form" role="form" method="post" t-if="not message" enctype="multipart/form-data">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <a t-attf-href="/" style="text-decoration: none !important;">
+                            <div class="d-flex align-items-center justify-content-center mb-3"
+                                 style="margin-left: -20%;">
+                                <span style="color: #6BB64A; margin-right: 0; font-size:23px;font-weight: bold;--tw-text-opacity: 1;
+    color: rgb(41 43 48 / var(--tw-text-opacity));font-family: Manrope, sans-serif;" >
+                                    SignUp
+                                </span>
+                            </div>
+                        </a>
+                        <div class="border p-3 mb-3" style="background-color:white;">
+                            <div class="text-center mb-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <t t-call="auth_signup.fields">
+                                <t t-set="only_passwords" t-value="bool(token and not invalid_token)"/>
+                            </t>
+                            <p class="alert alert-danger" t-if="error" role="alert">
+                                <t t-esc="error"/>
+                            </p>
+                            <input type="hidden" name="redirect" t-att-value="redirect"/>
+                            <input type="hidden" name="token" t-att-value="token"/>
+                            <div name="signup_terms_and_conditions_checkbox"  class="form-check mb-2">
+                                <input type="checkbox" id="signup_checkbox" class="form-check-input"/>
+                                <label for="signup_checkbox" class="form-check-label">
+                                    I agree to the
+                                    <a target="_BLANK" href="/signupterms">terms &amp; conditions</a>
+                                </label>
+                            </div>
+                            <!-- Hidden by default, only shown when checkbox is checked -->
+                            <div class="text-center oe_login_buttons d-grid pt-3" id="create_account_button_wrapper"
+                                 style="display: none;">
+                                <button type="submit" id="signup_button" class="btn btn-primary"
+                                        style="--tw-bg-opacity: 1;
+    background-color: rgb(41 43 48 / var(--tw-bg-opacity));
+" disabled="true">SIGN UP
+                                </button>
+                                <div class="o_login_auth"></div>
+                            </div>
+
+                        </div>
+                        <style>
+                            .btn-primary:disabled{
+                            --tw-bg-opacity: 1;
+                            background-color:#80808059 !important;
+                            border:1px solid #80808059;
+                            }
+                        </style>
+                        <div class="justify-content-center mt-2 d-flex align-items-center small">
+                            <span t-if="signup_enabled" style="margin-bottom: 0; color:black">Have an account?
+                            </span>
+                            <a t-attf-href="/web/login?{{ keep_query() }}" class="btn btn-link btn-sm"
+                               role="button" style="text-decoration: underline; margin-bottom: 0; ">
+                                Sign in
+                            </a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </t>
+
+
+
+
+<!--        <script type="text/javascript">-->
+<!--            // Hide the element with id "bottom"-->
+<!--            setTimeout(()=>{-->
+<!--                document.getElementById("top").style.display = "none";-->
+<!--                document.getElementById("bottom").style.display = "none";-->
+<!--                document.getElementById("wrapwrap").style.overflow = "hidden";-->
+<!--            },100);-->
+<!--            var checkbox = document.getElementById('signup_checkbox');-->
+<!--            var createAccountButtonWrapper = document.getElementById('signup_button');-->
+
+<!--            // Add event listener to the checkbox-->
+<!--            checkbox.addEventListener('change', function(e) {-->
+<!--                // If checkbox is checked, show the create account button; otherwise, hide it-->
+<!--                if (event.target.checked) {-->
+<!--                    createAccountButtonWrapper.disabled = false;-->
+<!--                } else {-->
+<!--                    createAccountButtonWrapper.disabled = true;-->
+<!--                }-->
+<!--            });-->
+
+<!--            document.addEventListener("DOMContentLoaded", function() {-->
+<!--                createAccountButtonWrapper.addEventListener("click", function(event) {-->
+<!--                    // Get values from form fields-->
+<!--                    var userNameField = document.getElementById('name').value;-->
+<!--                    var userPhoneField = document.getElementById('tname').value;-->
+
+<!--                    // Make an AJAX request-->
+<!--                    var url = "/sendSms";-->
+<!--                    fetch(url,{-->
+<!--                        method: 'POST',-->
+<!--                        headers: {-->
+<!--                          'Accept': 'application/json',-->
+<!--                          'Content-Type': 'application/json'-->
+<!--                        },-->
+<!--                        body: JSON.stringify({-->
+<!--                            "params":{-->
+
+<!--                                       "template_id":"664b1900d6fc0545ea2bf572",-->
+<!--                                       "short_url": "0",-->
+<!--                                       "recipients": [-->
+<!--                                           {-->
+<!--                                            "mobiles": `91${userPhoneField}`,-->
+<!--                                            "var": ` ${userNameField}`-->
+<!--                                           }-->
+<!--                                                     ]-->
+<!--                                    }-->
+<!--                                    })-->
+<!--                      })-->
+<!--                })-->
+<!--            })-->
+<!--        </script>-->
+    </xpath>
+</template>
+
+    <template id="terms_signup_template" name="terms template" active="True" inherit_id="website.layout">
+        <xpath expr="//main" position="inside">
+            <div t-if="request.httprequest.path == '/signupterms'">
+                <div class="alert alert-info alert-dismissible fade show d-print-none css_editable_mode_hidden">
+                    <div id="terms_conditions_signup" class="text-center">
+                        <span>This is a preview of your Terms &amp; Conditions.</span>
+                        <a href="/web/signup"><i class="oi oi-arrow-right me-1"></i>Back to Signup
+                        </a>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+                            data-oe-model="ir.ui.view" data-oe-id="757" data-oe-field="arch"
+                            data-oe-xpath="/t[1]/button[1]"> </button>
+                </div>
+                <div class="container oe_website_terms_conditions">
+                    <div id="o_terms_conditions">
+                        <h1>Terms and Conditions</h1>
+                        <p>Below text serves as a suggestion and doesn’t engage Odoo S.A. responsibility.</p>
+                        <ol></ol>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+<!--<template id="custom_shop_page" inherit_id="website_sale.products">-->
+<!--    <xpath expr="//td[contains(@t-attf-class, 'oe_product')]" position="attributes">-->
+<!--        &lt;!&ndash; Add your custom attributes here &ndash;&gt;-->
+<!--        <attribute name="style">height:435px;width:376px;</attribute>-->
+
+<!--    </xpath>-->
+<!--</template>-->
+
+
+<template id="custom_products_item" inherit_id="website_sale.products_item">
+
+    <xpath expr="//span[@t-field='image_holder.image_1920']" position="attributes">
+         <attribute name="t-options">
+                {'widget': 'image', 'preview_image': image_type, 'itemprop': 'image', 'style': 'width:285px; height:285px;', 'class': 'position-absolute'}
+            </attribute>
+
+
+    </xpath>
+</template>
+    <template id="custom_products_info" inherit_id="website_sale.products_item">
+    <xpath expr="//div[contains(@class, 'o_wsale_product_information')]" position="attributes">
+        <attribute name="style">align-items:center</attribute>
+    </xpath>
+</template>
+    <template id="products_item_name" inherit_id="website_sale.products_item">
+    <xpath expr="//a[contains(@class, 'text-primary text-decoration-none')]" position="attributes">
+        <attribute name="style">color:black !important;</attribute>
+    </xpath>
+</template>
+    <template id="inherit_product_price" inherit_id="website_sale.products_item">
+        <xpath expr="//div[contains(@class, 'product_price')]" position="attributes">
+            <attribute name="style">--tw-text-opacity: 1; color: rgb(194 98 133 / var(--tw-text-opacity));</attribute>
+        </xpath>
+    </template>
+<!--<template id="custom_add_to_wishlist" inherit_id="website_sale.products_item" name="Wishlist Button" priority="20">-->
+<!--    <xpath expr="//div[contains(@class, 'o_wsale_product_btn')]" position="inside">-->
+<!--        <t t-set="in_wish" t-value="product in products_in_wishlist"/>-->
+<!--        <t t-set="product_variant_id" t-value="in_wish or product._get_first_possible_variant_id()"/>-->
+<!--        <button t-if="product_variant_id"-->
+<!--                type="button"-->
+<!--                role="button"-->
+<!--                class="btn btn-outline-primary bg-white o_add_wishlist"-->
+<!--                t-att-disabled='in_wish or None' title="Add to Wishlist"-->
+<!--                t-att-data-product-template-id="product.id"-->
+<!--                t-att-data-product-product-id="product_variant_id"-->
+<!--                data-action="o_wishlist"-->
+<!--                style="position: absolute; top: -350px; left: 290px;">-->
+<!--            <span class="fa fa-heart" role="img" aria-label="Add to wishlist"/>-->
+<!--        </button>-->
+<!--    </xpath>-->
+<!--</template>-->
+
+        <template id="custom_product_wisthbtn" inherit_id="website_sale.products_item">
+             <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="attributes">
+                   <attribute name="style">color:red;</attribute>
+             </xpath>
+        </template>
+<!--    <template id="custom_product_wisthbtn" inherit_id="website_sale.products_item">-->
+<!--    <xpath expr="//div[contains(@class, 'o_wsale_product_btn')]" position="attributes">-->
+<!--        <attribute name="class">custom_product_button</attribute>-->
+<!--    </xpath>-->
+
+<!--    <xpath expr="//head" position="inside">-->
+<!--        <style>-->
+<!--            .custom_product_button {-->
+<!--                position: absolute;-->
+<!--                color: red;-->
+<!--            }-->
+
+<!--            /* Web view */-->
+<!--            @media (min-width: 768px) {-->
+<!--                .custom_product_button {-->
+<!--                    top: -280px;-->
+<!--                    left: 235px;-->
+<!--                }-->
+<!--            }-->
+
+<!--            /* Mobile view */-->
+<!--            @media (max-width: 767px) {-->
+<!--                .custom_product_button {-->
+<!--                    top: -180px;-->
+<!--                    left: 140px;-->
+<!--                }-->
+<!--            }-->
+<!--        </style>-->
+<!--    </xpath>-->
+<!--</template>-->
+
+</odoo>

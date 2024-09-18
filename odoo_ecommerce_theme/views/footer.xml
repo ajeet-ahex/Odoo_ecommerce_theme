@@ -1,0 +1,264 @@
+<odoo>
+    <data>
+            <template id="custom_footer" inherit_id="website.layout" name="custom footer">
+            <xpath expr="//footer" position="replace">
+<!--                ###########################################-->
+<!--                <footer>-->
+<!--                    <div class="footer-top" style="width:100%;padding: 0 30px 0;background:#f0f0f0 !important;">-->
+<!--                        <div style=" width:100%; height:600px; display:flex; align-items:center; justify-content:center;">-->
+<!--                            <div style=" width:50%; height:400px;display:flex;">-->
+<!--                                        <div style="flex-basis:25%;  height:100%;">-->
+
+<!--&lt;!&ndash;                                          <strong style="font-size:14px;"> <head>Shop Online</head></strong>&ndash;&gt;-->
+<!--                                                        <ul style="list-style-type:none;">-->
+
+<!--                                                            <li > <strong style="font-size:14px;"> <head>Shop Online</head></strong></li>-->
+
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Engagement Rings-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Bridal-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Jewellery-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Collections-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   BeSpoke-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Loose Diamonds-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Talk with a Expert-->
+<!--                                               </li>-->
+<!--                                           </ul>-->
+<!--                                        </div>-->
+<!--                                        <div style="flex-basis:25%;  height:100%;">-->
+
+
+<!--                                                       <ul style="list-style-type:none;">-->
+<!--                                                            <li > <strong style="font-size:14px;"> <head>About us</head></strong></li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Our World-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Why Shop Steven Stone-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Our Showrooms-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Our BeSpoke process-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Our Confict Free Promise-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Giving Back-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Our Blog-->
+<!--                                               </li>-->
+<!--                                           </ul>-->
+
+<!--                                        </div>-->
+<!--                                        <div style="flex-basis:25%; height:100%;">-->
+<!--                                            <ul style="list-style-type:none;">-->
+<!--                                                           <li > <strong style="font-size:14px;"> <head>Customer Service</head></strong></li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   contact us-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Store Locations-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   FAQ'S-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Manufacture Warranty-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Delivery information-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Ships and Returns-->
+<!--                                               </li>-->
+<!--                                           </ul>-->
+<!--                                        </div>-->
+<!--                                        <div style="flex-basis:25%;  height:100%;">-->
+
+
+<!--                                                      <ul style="list-style-type:none;">-->
+<!--                                                           <li > <strong style="font-size:14px;"> <head>Help and Guidance</head></strong></li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Buying Game-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Diamond Guide-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Finance Information-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Weeding Guide-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Terms and Conditions-->
+<!--                                               </li>-->
+<!--                                               <li style="margin-top:20px;font-size:12px;">-->
+<!--                                                   Privacy Policy-->
+<!--                                               </li>-->
+<!--                                           </ul>-->
+<!--                                        </div>-->
+<!--                                         <div style="flex-basis:25%;  height:100%;">-->
+<!--                                              <strong style="font-size:14px;"> <head>Follow us </head></strong>-->
+<!--&lt;!&ndash;                                             ###################################&ndash;&gt;-->
+<!--                                             <div class="links-items " style="margin-top:20px; display:flex; gap:20px;">-->
+<!--                                <ul style="display: flex; list-style: none; padding: 0; margin: 0;">-->
+<!--                                    <li style="margin-right:20px;">-->
+<!--                                        <a target="_blank" href="https://www.facebook.com/StevenStoneJewellers">-->
+<!--                                            <i class="fa fa-facebook" style="color:black;"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li style="margin-right:20px;">-->
+<!--                                        <a target="_blank" href="https://twitter.com/stevenstoneuk">-->
+<!--                                            <i class="fa fa-twitter" style="color:black;"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li style="margin-right:20px;">-->
+<!--                                        <a target="_blank" href="https://www.instagram.com/stevenstonejewellers">-->
+<!--                                            <i class="fa fa-instagram" style="color:black;"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li style="margin-right:20px;">-->
+<!--                                        <a target="_blank" href="https://www.pinterest.co.uk/stevenstone/">-->
+<!--                                            <i class="fa fa-pinterest" style="color:black;"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--&lt;!&ndash;                                             ############################################&ndash;&gt;-->
+<!--                                         </div>-->
+
+<!--        &lt;!&ndash; Centered content here &ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--        </div>-->
+
+<!--                </footer>-->
+
+<footer>
+    <style>
+    @media (max-width: 768px) {
+        .footer-column {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+        }
+        .footer-top {
+            padding: 0 15px;
+        }
+    }
+</style>
+
+    <div class="footer-top" style="width:100%;padding: 0 30px;background:#f0f0f0 !important;">
+        <div style="width:100%; height:auto; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;">
+            <div style="width:100%; max-width:1200px; display:flex; flex-wrap:wrap;">
+                <div class="footer-column" style="flex-basis:25%; padding: 10px;">
+                    <ul style="list-style-type:none; padding: 0;">
+                        <li><strong style="font-size:14px;">Shop Online</strong></li>
+                        <li style="margin-top:20px;font-size:12px;">Engagement Rings</li>
+                        <li style="margin-top:20px;font-size:12px;">Bridal</li>
+                        <li style="margin-top:20px;font-size:12px;">Jewellery</li>
+                        <li style="margin-top:20px;font-size:12px;">Collections</li>
+                        <li style="margin-top:20px;font-size:12px;">BeSpoke</li>
+                        <li style="margin-top:20px;font-size:12px;">Loose Diamonds</li>
+                        <li style="margin-top:20px;font-size:12px;">Talk with an Expert</li>
+                    </ul>
+                </div>
+                <div class="footer-column" style="flex-basis:25%; padding: 10px;">
+                    <ul style="list-style-type:none; padding: 0;">
+                        <li><strong style="font-size:14px;">About Us</strong></li>
+                        <li style="margin-top:20px;font-size:12px;">Our World</li>
+                        <li style="margin-top:20px;font-size:12px;">Why Shop Steven Stone</li>
+                        <li style="margin-top:20px;font-size:12px;">Our Showrooms</li>
+                        <li style="margin-top:20px;font-size:12px;">Our Bespoke Process</li>
+                        <li style="margin-top:20px;font-size:12px;">Our Conflict Free Promise</li>
+                        <li style="margin-top:20px;font-size:12px;">Giving Back</li>
+                        <li style="margin-top:20px;font-size:12px;">Our Blog</li>
+                    </ul>
+                </div>
+                <div class="footer-column" style="flex-basis:25%; padding: 10px;">
+                    <ul style="list-style-type:none; padding: 0;">
+                        <li><strong style="font-size:14px;">Customer Service</strong></li>
+                        <li style="margin-top:20px;font-size:12px;">Contact Us</li>
+                        <li style="margin-top:20px;font-size:12px;">Store Locations</li>
+                        <li style="margin-top:20px;font-size:12px;">FAQs</li>
+                        <li style="margin-top:20px;font-size:12px;">Manufacture Warranty</li>
+                        <li style="margin-top:20px;font-size:12px;">Delivery Information</li>
+                        <li style="margin-top:20px;font-size:12px;">Shipping and Returns</li>
+                    </ul>
+                </div>
+                <div class="footer-column" style="flex-basis:25%; padding: 10px;">
+                    <ul style="list-style-type:none; padding: 0;">
+                        <li><strong style="font-size:14px;">Help and Guidance</strong></li>
+                        <li style="margin-top:20px;font-size:12px;">Buying Guide</li>
+                        <li style="margin-top:20px;font-size:12px;">Diamond Guide</li>
+                        <li style="margin-top:20px;font-size:12px;">Finance Information</li>
+                        <li style="margin-top:20px;font-size:12px;">Wedding Guide</li>
+                        <li style="margin-top:20px;font-size:12px;">Terms and Conditions</li>
+                        <li style="margin-top:20px;font-size:12px;">Privacy Policy</li>
+                    </ul>
+                </div>
+                <div class="footer-column" style="flex-basis:25%; padding: 10px;">
+                    <strong style="font-size:14px;">Follow Us</strong>
+                    <div class="links-items" style="margin-top:20px; display:flex; gap:20px;">
+                        <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-right:20px;">
+                                <a target="_blank" href="https://www.facebook.com/StevenStoneJewellers">
+                                    <i class="fa fa-facebook" style="color:black;"></i>
+                                </a>
+                            </li>
+                            <li style="margin-right:20px;">
+                                <a target="_blank" href="https://twitter.com/stevenstoneuk">
+                                    <i class="fa fa-twitter" style="color:black;"></i>
+                                </a>
+                            </li>
+                            <li style="margin-right:20px;">
+                                <a target="_blank" href="https://www.instagram.com/stevenstonejewellers">
+                                    <i class="fa fa-instagram" style="color:black;"></i>
+                                </a>
+                            </li>
+                            <li style="margin-right:20px;">
+                                <a target="_blank" href="https://www.pinterest.co.uk/stevenstone/">
+                                    <i class="fa fa-pinterest" style="color:black;"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- CSS for responsiveness -->
+
+
+
+<!--                ####################################################-->
+
+            </xpath>
+           </template>
+<!--           <template id="custom_footer_style" inherit_id="website.layout" name="custom footer">-->
+<!--            <xpath expr="//footer" position="attributes">-->
+<!--                  <attribute name="style">background-color:#ebf5ff;</attribute>-->
+<!--            </xpath>-->
+<!--           </template>-->
+
+    </data>
+</odoo>

@@ -1,0 +1,145 @@
+<odoo>
+    <data>
+        <!-- Template for customizing the shop page -->
+        <template id="custom_shop_page_inherit" inherit_id="website_sale.products" >
+<!--        <xpath expr="//div[@id='products_grid']" position="inside">-->
+<!--            <img src="/odoo_ecommerce_theme/static/src/img/hero.jpg" alt="Custom Image" style="width: 100%; height: 300px;"/>-->
+<!--        </xpath>-->
+<!--             <template id="website_sale.products_categories" active="False" name="Categories in Left Side "/>-->
+
+            <!-- Add custom UI changes inside the product grid -->
+            <xpath expr="//div[@id='products_grid']" position="attributes">
+<!--                 <attribute name="style">border: 2px solid black;</attribute>-->
+
+                <div class="custom-ui-element">
+                    <p>Custom Shop UI</p>
+
+              <div class="outer" style="width: 100%; height:300px;border: 2px solid black;">
+        <div class="inner" style="width:95%; height:250px;margin-top: 20px;margin-bottom: 20px;margin-left:20px;margin-right: 20px; display: flex;flex-direction: row;">
+            <div class="box" style="width:25%;height:100%;display:flex; flex-direction:column;">
+                <div class="image" style="width:100%;height: 80% ;">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQoeC2ESQ3YTHUb9PHEdjaYTML17X0x_sjBS5ih2TffCPK9muWfpYH-YVInX4Dr9fzWmTVgYH_1kb6lUsmQ_86zUVks-rqXNH8k3UlDtmiWKLjNUPB94QOI43k" alt="" style="width:100%;height: 80% ;"/>
+                </div>
+                <div >
+                  <center> item 1</center>
+                </div>
+            </div>
+            <div class="box" style="width:25%;height:100%;display:flex; flex-direction:column;">
+                <div class="image" style="width:100%;height: 80% ;">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQoeC2ESQ3YTHUb9PHEdjaYTML17X0x_sjBS5ih2TffCPK9muWfpYH-YVInX4Dr9fzWmTVgYH_1kb6lUsmQ_86zUVks-rqXNH8k3UlDtmiWKLjNUPB94QOI43k" alt="" style="width:100%;height: 80% ;"/>
+                </div>
+                <div >
+                  <center> item 2</center>
+                </div>
+            </div>
+            <div class="box" style="width:25%;height:100%;display:flex; flex-direction:column;">
+                <div class="image" style="width:100%;height: 80% ;">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQoeC2ESQ3YTHUb9PHEdjaYTML17X0x_sjBS5ih2TffCPK9muWfpYH-YVInX4Dr9fzWmTVgYH_1kb6lUsmQ_86zUVks-rqXNH8k3UlDtmiWKLjNUPB94QOI43k" alt="" style="width:100%;height: 80% ;"/>
+                </div>
+                <div >
+                  <center> item 3</center>
+                </div>
+            </div>
+            <div class="box" style="width:25%;height:100%;display:flex; flex-direction:column;">
+                <div class="image" style="width:100%;height: 80% ;">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQoeC2ESQ3YTHUb9PHEdjaYTML17X0x_sjBS5ih2TffCPK9muWfpYH-YVInX4Dr9fzWmTVgYH_1kb6lUsmQ_86zUVks-rqXNH8k3UlDtmiWKLjNUPB94QOI43k" alt="" style="width:100%;height: 80% ;"/>
+                </div>
+                <div >
+                  <center> item 4</center>
+                </div>
+            </div>
+        </div>
+
+    </div>
+                </div>
+            </xpath>
+
+
+        </template>
+        <template id="custom_products_categories_inherit" inherit_id="website_sale.products_categories" name="Activate Categories in Left Side">
+</template>
+
+
+<!--     <xpath expr="//div[@class='o_wsale_product_grid_wrapper']" position="attributes">-->
+<!--               <attribute name="style">border: 2px solid black;</attribute>-->
+
+<!--                   </xpath>-->
+
+
+        <!-- Template for individual product items -->
+
+    <template id="custom_products_inherits" inherit_id="website_sale.products">
+<!--      <xpath expr="//div[@class='o_wsale_product_grid_wrapper']" position="attributes">-->
+<!--            <attribute name="style">border:2px solid pink;</attribute>-->
+<!--        </xpath>-->
+    </template>
+<!--<template id="custom_shop_product_carousel_inherit" inherit_id="website_sale.shop_product_carousel">-->
+<!--    <xpath expr="//div[contains(@class, 'carousel-item') and contains(@class, 'h-100') and contains(@class, 'text-center')]" position="attributes">-->
+<!--        <attribute name="class">d-flex align-items-center justify-content-center</attribute>-->
+<!--    </xpath>-->
+<!--</template>-->
+
+
+<template id="inherit_shop_product_carousel_class" inherit_id="website_sale.shop_product_carousel">
+
+    <!-- Target the div with the class 'carousel slide position-sticky mb-3 overflow-hidden' -->
+    <xpath expr="//div[@class='carousel slide position-sticky mb-3 overflow-hidden']" position="replace">
+        <!-- Replace the existing classes with new ones -->
+          <div class="o_carousel_product_outer carousel-outer position-relative flex-grow-1 overflow-hidden">
+                <span t-if="len(product_images) > 1"
+                      t-attf-class="o_ribbon #{ribbon['html_class']} z-index-1"
+                      t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color}"
+                      t-out="ribbon['html'] or ''"
+                />
+                <div class="">
+                    <t t-set="image_classes" t-value="''"/>
+                    <t t-foreach="product_images" t-as="product_image">
+                        <div t-attf-class="#{' active' if product_image_first else ''}">
+                            <t t-call="website_sale.shop_product_image"/>
+                        </div>
+                    </t>
+                </div>
+                <t t-if="len(product_images) > 1">
+                    <a class="carousel-control-prev" href="#o-carousel-product" role="button" data-bs-slide="prev">
+                        <span class="oi oi-chevron-left fa-2x oe_unmovable" role="img" aria-label="Previous" title="Previous"/>
+                    </a>
+                    <a class="carousel-control-next" href="#o-carousel-product" role="button" data-bs-slide="next">
+                        <span class="oi oi-chevron-right fa-2x oe_unmovable" role="img" aria-label="Next" title="Next"/>
+                    </a>
+                </t>
+            </div>
+    </xpath>
+
+</template>
+
+<template id="inherit_shop_product_image" inherit_id="website_sale.shop_product_image">
+    <!-- Target the div with the specific class to be replaced -->
+    <xpath expr="//div[@class='position-relative d-inline-flex overflow-hidden m-auto h-100']" position="attributes">
+        <!-- Replace the existing class with the new one -->
+        <attribute name="class"> </attribute>
+    </xpath>
+</template>
+<template id="inherited_product_template" inherit_id="website_sale.product">
+    <!-- Modify the add to cart button to include the background color style -->
+    <xpath expr="//a[@id='add_to_cart']" position="attributes">
+        <attribute name="style">background-color:black;</attribute>
+    </xpath>
+</template>
+        <template id="customize_products_template" inherit_id="website_sale.products">
+    <xpath expr="//div[@class='container oe_website_sale pt-2']" position="attributes">
+        <attribute name="style">display:flex;width:1200px;</attribute>
+    </xpath>
+</template>
+
+ <template id="inherit_products_template" inherit_id="website_sale.products">
+        <xpath expr="//td[@t-attf-class='oe_product']" position="attributes">
+            <attribute name="class">hover-border</attribute>
+            <attribute name="style">border:2px solid transparent; border-radius:20px; transition:border-color 0.3s ease;</attribute>
+        </xpath>
+
+        <!-- Adding the CSS styles within the same template -->
+
+    </template>
+
+    </data>
+</odoo>

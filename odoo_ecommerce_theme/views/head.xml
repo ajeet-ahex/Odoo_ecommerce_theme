@@ -1,0 +1,174 @@
+<odoo>
+    <data>
+                <template id="custom_header" inherit_id="website.layout" name="custom header">
+            <xpath expr="//header" position="replace">
+                <header>
+<style>
+    .sign-in{
+        margin-right:100px;
+    }
+    @media only screen and (max-width: 768px) {
+        .header {
+            font-size: x-small;
+            margin-left: 120px;
+        }
+        .header-half {
+            font-size: x-small;
+            margin-left: 120px;
+        }
+        .sign-in {
+            margin-right: 40px;
+            margin-top: -10px;
+        }
+    }
+</style>
+
+                    <!-- Title in the middle -->
+                    <div class="container mt-4">
+                        <div class="row justify-content-center">
+                            <div class="col text-center">
+                                <h3 class="header">S T E V E N S T O N E</h3>
+                                <h5 class="header-half">1937</h5>
+                            </div>
+                            <div class="sign-in" style="width:40px;height:40px;">
+                                 <a t-attf-href="/web/login" style="text-decoration: none !important;">
+                                <img src="/odoo_ecommerce_theme/static/src/img/user.png"  href='/web/login' style="height:100%;object-fit:cover;"/>
+                                 </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navbar -->
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/diamonds">Diamonds</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/engagement-rings">Engagement Rings</a>
+                                    <div class="hover-content">
+                                        <div class="hover-container">
+                                            <div style="width: 100%; height: 320px; display: flex;">
+                                                <div style="width: 50%; height: 90%; margin: 10px; display: flex;">
+                                                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width:600px;">
+                                                        <div class="carousel-inner">
+                                                            <div class="carousel-item active">
+                                                                <div style="display: flex; flex-direction: row; width:600px;">
+                                                                    <img class="d-block" src="https://wallpapercave.com/wp/wp3308174.jpg" alt="First slide" style="width: 100px; height: 100px; margin: 60px 20px 0 70px;"/>
+                                                                    <img class="d-block" src="https://pngimg.com/uploads/ring/ring_PNG131.png" alt="First slide" style="width: 100px; height: 100px; margin: 60px 20px 0 50px;"/>
+                                                                    <img class="d-block" src="https://kyozoufs.blob.core.windows.net/filestoragedb1/Pictures/_24/23243/23242978.jpg" alt="First slide" style="width: 100px; height: 100px; margin: 60px 20px 0 50px;"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <div style="display: flex; flex-direction: row;">
+                                                                    <img class="d-block" src="https://wallpapercave.com/wp/wp3308174.jpg" alt="Second slide" style="width: 100px; height: 100px; margin: 60px 20px 0 70px;"/>
+                                                                    <img class="d-block" src="https://wallpapercave.com/wp/wp3308174.jpg" alt="Second slide" style="width: 100px; height: 100px; margin: 60px 20px 0 50px;"/>
+                                                                    <img class="d-block" src="https://wallpapercave.com/wp/wp3308174.jpg" alt="Second slide" style="width: 100px; height: 100px; margin: 60px 20px 0 50px;"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <div style="display: flex; flex-direction: row;">
+                                                                    <img class="d-block" src="https://wallpapercave.com/wp/wp3308174.jpg" alt="Third slide" style="width: 100px; height: 100px; margin: 60px 20px 0 70px;"/>
+                                                                    <img class="d-block" src="https://wallpapercave.com/wp/wp3308174.jpg" alt="Third slide" style="width: 100px; height: 100px; margin: 60px 20px 0 50px;"/>
+                                                                    <img class="d-block" src="https://wallpapercave.com/wp/wp3308174.jpg" alt="Third slide" style="width: 100px; height: 100px; margin: 60px 20px 0 50px;"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div style="width: 50%; height: 90%; margin: 10px; display: flex; flex-direction: row;">
+                                                    <div style="width: 100px; height: 220px; margin-top: 10px; margin-left: 20px; margin-right: 20px;">
+                                                        Shop By Shape
+                                                    </div>
+                                                    <div style="width: 100px; height: 220px; margin-top: 10px; margin-left: 20px; margin-right: 20px;">
+                                                        Create your own
+                                                    </div>
+                                                    <div style="width: 100px; height: 220px; margin-top: 10px; margin-left: 20px; margin-right: 20px;">
+                                                        Learn
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/wedding-rings">Wedding Rings</a>
+                                    <div class="hover-content">
+                                        <div class="hover-container">
+                                            <p>This is the Wedding Rings section content.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/eternity-rings">Eternity Rings</a>
+                                    <div class="hover-content">
+                                        <div class="hover-container">
+                                            <p>This is the Eternity Rings section content.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/jewellery">Jewellery</a>
+                                    <div class="hover-content">
+                                        <div class="hover-container">
+                                            <p>This is the Jewellery section content.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/bespoke">Bespoke</a>
+                                    <div class="hover-content">
+                                        <div class="hover-container">
+                                            <p>This is the Bespoke section content.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/learn">Learn</a>
+                                    <div class="hover-content">
+                                        <div class="hover-container">
+                                            <p>This is the Learn section content.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/sale">SALE</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/shop">SHOP</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+       </xpath>
+                       <xpath expr="//head" position="inside">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <link rel="stylesheet" type="text/css" href="/odoo_ecommerce_theme/static/src/css/custom_style.css"/>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+             <style>
+                .hover-border:hover {
+                    border-color: pink; /* Border changes to pink on hover */
+                }
+            </style>
+
+            </xpath>
+
+
+                </template>
+    </data>
+</odoo>

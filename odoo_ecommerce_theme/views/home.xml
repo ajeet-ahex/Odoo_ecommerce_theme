@@ -1,0 +1,464 @@
+<odoo>
+    <data>
+        <template id="custom_homepage" inherit_id="website.homepage" name="home">
+            <xpath expr="//t[@t-call='website.layout']" position="replace">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="homepage"/>
+                    <t t-set="opt_wsale_categories" t-value="is_view_active('website_sale.products_categories')"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!--                    <link rel="stylesheet" href="/odoo_ecommerce_theme/static/src/css/slider.css"/>-->
+                    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css"
+                          rel="stylesheet"/>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+                    <link rel="stylesheet"
+                          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+                    <link rel="stylesheet"
+                          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+                    <link rel="stylesheet" href="/odoo_ecommerce_theme/static/src/css/slider.css"/>
+                    <script src="/odoo_ecommerce_theme/static/src/js/slider.js"> </script>
+
+<!--                        &lt;!&ndash; Cover Image &ndash;&gt;-->
+                        <div class="container mt-4">
+                            <img src="/odoo_ecommerce_theme/static/src/img/home.jpg" alt="Cover Image"
+                                 class="custom-cover-image"/>
+                        </div>
+                    <style>
+                        .product{
+                        height: 267px;
+                        width: 247px;
+                        border: 2px solid #ccc;
+                        margin-bottom: 20px;
+                        border-radius:20px;
+                        }
+                        .collection{
+                        width:97%;
+                        height:1100px;
+                        display:flex;
+                        background:#eeeeee;
+                        }
+                        .disc{
+                        margin-left:40px;
+                        }
+                        @media only screen and (max-width: 767px) {
+                            .product {
+                                height: 50px;
+                                width: 50px;
+                                border:0px;
+                                border-radius:0px;
+                            }
+                            .product-name{
+                                font-size:10px;
+                                color:black;
+                            }
+                            .collection{
+                                width:auto;
+                                height:auto;
+                            }
+                            .diamond-ring{
+                                margin-top:50px;
+                            }
+                            .label{
+                                margin-top:60px;
+                            }
+                            .card-link{
+                                margin-left:-40px;
+                            }
+                            .para{
+                                font-size:1.25rem;
+                            }
+                            .text-box{
+                                font-size:0.75rem;
+                            }
+                            .disc{
+                                margin-left:20px;
+                            }
+                        }
+
+                    </style>
+
+                    <div style="width:100%;margin-top:20px;" >
+                           <t t-set="opt_wsale_categories" t-value="is_view_active('website_sale.products_categories')"/>
+                                   <section id="product_categories_section" class="container" >
+                                       <center>
+                <h1 style="margin-bottom:40px;">Product Categories</h1>
+                                       </center>
+                <div t-if="categories">
+                    <div style="display: flex; flex-wrap: wrap;justify-content:center;gap:20px;">
+                        <t t-foreach="categories" t-as="category" t-index="index">
+                            <div class="product" >
+                                <img src="/website_sale_product_brand/static/src/img/item.jpeg" style="height:60%;width:100%;object-fit:cover;"/>
+                                <a class="product-name" t-attf-href="/shop/category/#{category.id}" style="display: block; width: 100%; text-align: center; text-decoration: none;">
+                                     <t t-esc="category.name" style="color:black;"/>
+                                </a>
+                                <center>
+<!--                                    <t t-esc="category.name" />-->
+                                </center>
+                            </div>
+<!--                            <t t-if="(index + 1) % 5 == 0 and index is not None">-->
+<!--                                <div style="flex-basis: 100%; height: 0;"></div>-->
+<!--                            </t>-->
+                        </t>
+                    </div>
+                </div>
+                <div t-if="not categories">
+                    <p>No categories found.</p>
+                </div>
+            </section>
+
+
+
+                    </div>
+                        <!-- New Section -->
+                        <div class="container mt-4 new-section" style="margin-top:40px !important;">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="experts-text">Experts In Diamonds Since 1937</h4>
+                                    <h6 class="help-text">We are here to help you with one of the</h6>
+                                    <h6 class="help-text">most important decisions of your life. No need to worry.</h6>
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Four boxes -->
+<!--                                    <div class="d-flex justify-content-between align-items-center">-->
+<!--                                        <div class="box-item">box1</div>-->
+<!--                                        <div class="box-item">box2</div>-->
+<!--                                        <div class="box-item">box3</div>-->
+<!--                                        <div class="box-item">box4</div>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collection" style="">
+                            <div class="col-6 row-6 m-2 mt-4"
+                                 style="height:90%;width:80%;display:flex;align-items:center;">
+                                <div class="" style="width:70%;height:60%;margin-top:10%;margin-left:12%;">
+                                    <img src="/odoo_ecommerce_theme/static/src/img/img1.jpg" class="diamond-ring"
+                                         style="width:100%;height:100%;"/>
+                                </div>
+
+                            </div>
+                            <div class="col-6 row-6 m-2 mt-4" style="height:90%;width:80%;">
+                                <div class="" style="height:45%;width:90%;margin-top:20px;">
+                                    <img src="/odoo_ecommerce_theme/static/src/img/img2.jpg"
+                                         style="width:100%;height:100%;"/>
+                                </div>
+                                <div class="" style="height:45%;width:90%;margin-top:80px;">
+                                    <img src="/odoo_ecommerce_theme/static/src/img/img3.jpg"
+                                         style="width:100%;height:100%;"/>
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            .slider-container {
+                            width: 100%;
+                            overflow: hidden;
+                            }
+
+                            .slider {
+                            display: flex;
+                            transition: transform 0.5s ease-in-out;
+                            }
+
+                            .slider input {
+                            display: none;
+                            }
+
+                            .card {
+                            flex: 0 0 25%;
+                            box-sizing: border-box;
+                            padding: 20px;
+                            text-align: center;
+                            background-color: white;
+                            border: 1px solid #ddd;
+                            height:350px;
+
+                            }
+
+                            #slide1:checked ~ .slider {
+                            transform: translateX(0);
+                            }
+
+                            #slide2:checked ~ .slider {
+                            transform: translateX(-100%);
+                            }
+
+                            .controls {
+                            text-align: center;
+                            margin-top: 10px;
+                            }
+
+                            .controls label {
+                            cursor: pointer;
+                            padding: 5px;
+                            background-color: #ccc;
+                            margin: 0 5px;
+                            display: inline-block;
+                            }
+                            .product-slider {
+                            position: relative;
+                            width: 100%;
+                            max-width: 800px; /* Adjust based on your design */
+                            overflow: hidden;
+                            margin: 20px auto;
+                            border: 1px solid #ccc; /* Optional for styling */
+                            }
+
+                            .slider-container {
+                            display: flex;
+                            transition: transform 0.3s ease-in-out;
+                            width: 100%; /* Adjusted width */
+                            }
+
+                            .slider-item {
+                            flex: 0 0 25%; /* Each item takes 25% of the container width (4 items) */
+                            box-sizing: border-box;
+                            padding: 20px;
+                            text-align: center;
+                            }
+
+                            .slider-prev,
+                            .slider-next {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background-color: rgba(0, 0, 0, 0.5);
+                            color: white;
+                            border: none;
+                            padding: 10px;
+                            cursor: pointer;
+                            }
+
+                            .slider-prev {
+                            left: 10px;
+                            }
+
+                            .slider-next {
+                            right: 10px;
+                            }
+                            .slider-container {
+                            width: 1600px; /*4 items 400px */
+                            overflow: hidden;
+                            margin: auto;
+                            position: relative;
+                            }
+
+                            .slider {
+                            display: flex;
+                            transition: transform 0.5s ease-in-out;
+                            }
+
+                            .slide-item {
+                            min-width: 330px;
+                            height: 500px;
+                            background-color: white;
+                            margin: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 24px;
+                            border-radius: 10px;
+                            border:2px solid #ccc;
+                            margin-top:40px;
+                            margin-left:40px;
+                            }
+
+                            .slider-controls {
+                            position: absolute;
+                            top: 50%;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            transform: translateY(-50%);
+                            }
+
+                            .slider-controls button {
+                            background-color: gray;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            font-size: 24px;
+                            cursor: pointer;
+                            opacity: 0.6;
+                            }
+
+                            .slider-controls button:hover {
+                            background-color: darkgray;
+                            opacity: 1;
+                            }
+
+                        </style>
+                        <!--these is product page-->
+
+                        <div style="height:500px;display:flex;">
+                            <div class="container swiper" style="display:flex;justify-content:center;">
+                                <div class="card-wrapper">
+                                    <ul class="card-list swiper-wrapper">
+                                        <li class="card-item  swiper-slide">
+                                            <a href="#" class="card-link">
+                                                <img src="/odoo_ecommerce_theme/static/src/img/ring1.jpeg" alt="card image"
+                                                     class="card-img"/>
+                                                <p class="badge designer">designer</p>
+                                                <h2 class="card-title">Lorem ipsum dolor, sit amet consectetur
+                                                    adipisicing elit. Tenetur, a.
+                                                </h2>
+                                                <button class="card-button material-symbols-outlined">
+                                                    arrow_forward_ios
+                                                </button>
+                                            </a>
+                                        </li>
+                                        <li class="card-item swiper-slide">
+                                            <a href="#" class="card-link">
+                                                <img src="/odoo_ecommerce_theme/static/src/img/ring1.jpeg" alt="card image"
+                                                     class="card-img"/>
+                                                <p class="badge developer">Developer</p>
+                                                <h2 class="card-title">Lorem ipsum dolor, sit amet consectetur
+                                                    adipisicing elit. Tenetur, a.
+                                                </h2>
+                                                <button class="card-button material-symbols-outlined">
+                                                    arrow_forward_ios
+                                                </button>
+                                            </a>
+                                        </li>
+                                        <li class="card-item swiper-slide">
+                                            <a href="#" class="card-link">
+                                                <img src="/odoo_ecommerce_theme/static/src/img/ring1.jpeg" alt="card image"
+                                                     class="card-img"/>
+                                                <p class="badge editor">editor</p>
+                                                <h2 class="card-title">Lorem ipsum dolor, sit amet consectetur
+                                                    adipisicing elit. Tenetur, a.
+                                                </h2>
+                                                <button class="card-button material-symbols-outlined">
+                                                    arrow_forward_ios
+                                                </button>
+                                            </a>
+                                        </li>
+                                        <li class="card-item swiper-slide">
+                                            <a href="#" class="card-link">
+                                                <img src="/odoo_ecommerce_theme/static/src/img/ring1.jpeg" alt="card image"
+                                                     class="card-img"/>
+                                                <p class="badge gamer">gamer</p>
+                                                <h2 class="card-title">Lorem ipsum dolor, sit amet consectetur
+                                                    adipisicing elit. Tenetur, a.
+                                                </h2>
+                                                <button class="card-button material-symbols-outlined">
+                                                    arrow_forward_ios
+                                                </button>
+                                            </a>
+                                        </li>
+                                        <li class="card-item swiper-slide">
+                                            <a href="#" class="card-link">
+                                                <img src="/odoo_ecommerce_theme/static/src/img/ring1.jpeg" alt="card image"
+                                                     class="card-img"/>
+                                                <p class="badge marketer">marketer</p>
+                                                <h2 class="card-title">Lorem ipsum dolor, sit amet consectetur
+                                                    adipisicing elit. Tenetur, a.
+                                                </h2>
+                                                <button class="card-button material-symbols-outlined">
+                                                    arrow_forward_ios
+                                                </button>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="swiper-pagination"> </div>
+                                    <div class="swiper-slide-button swiper-button-prev"> </div>
+                                    <div class="swiper-slide-button swiper-button-next"> </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <div class="container " style="width:97%;height:500px;display:flex;background:#ebf5ff;">
+                        <div class="container " style="width:45%;height:90%;">
+                            <p style="color:green;">
+                                For those who are Different
+                            </p>
+                            <div style="font-size:3rem;font-family: 'Inconsolata';">
+                                <h2 class="para">We Design and Create Bespoke Jewellery</h2>
+                            </div>
+
+                            <p class="text-box">
+                                Steven Stone has extensive experience in creating one-of-a-kind jewellery.
+                                There are no limitations when it comes to helping you bring a truly
+                                unique piece to life.
+
+                            </p>
+                            <button style="background-color: #046004;color: white;height: 40px;width: 200px;margin-top: 20px;border-radius: 4px;" class="disc">
+                                Discover Bespoke
+                            </button>
+                            <button style="margin-left: 20px;height: 40px;width: 200px;margin-top: 20px;border-radius: 4px;">
+                                Contact An Expert
+                            </button>
+                        </div>
+                        <div class="container " style="width:45%;height:90%;">
+                            <!--                             <video src="/odoo_ecommerce_theme/static/src/img/video.mp4" style="width: 100%; height: 100%; object-fit: cover;" > </video>-->
+                        </div>
+                    </div>
+                    <div class="container " style="width:97%;height:auto;">
+                        <center>
+                            <p style="color:green;">100% Ethical No Matter Your Carrier</p>
+                        </center>
+                        <center>
+                            <h1 style="font-family:'FontAwesome';" class="label">
+                                <strong>Lab Grown or</strong>
+                            </h1>
+                        </center>
+                        <center>
+                            <h1 style="font-family:'FontAwesome'; ">
+                                <strong>Natural Diamonds</strong>
+                            </h1>
+                        </center>
+                        <div class="container" style="width:90%;height:auto;display:flex;flex-direction:row;background:#fff1f3;margin-bottom:40px;">
+                            <div style="width:40%;height:90%;margin:40px;">
+                                <img src="/odoo_ecommerce_theme/static/src/img/lab1.jpg" style="max-width:100%;"/>
+                            </div>
+                            <div style="width:40%;height:40%;margin:40px;">
+                                <img src="/odoo_ecommerce_theme/static/src/img/lab2.jpg" style="max-width:100%;"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                    <script src="/odoo_ecommerce_theme/static/src/js/slider.js"></script>
+
+                </t>
+
+            </xpath>
+            <xpath expr="//t[@t-call='website.layout']" position="inside">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <link rel="stylesheet" type="text/css" href="/odoo_ecommerce_theme/static/src/css/custom_style.css"/>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+            </xpath>
+        </template>
+<!--            <template id="website_sale.products_categories" inherit_id="website_sale.products_categories">-->
+<!--        <attribute name="active">False</attribute>-->
+<!--    </template>-->
+        <template id="custom_background" inherit_id="website.layout">
+             <xpath expr="//main" position="attributes">
+                   <attribute name="style">background:white;</attribute>
+             </xpath>
+
+        </template>
+<!--        <template id="products_inherit_" inherit_id="website_sale.products">-->
+<!--    <xpath expr="//td[@t-attf-class='oe_product']" position="attributes">-->
+<!--        <attribute name="style">border: 2px solid pink;margin:20px;</attribute>-->
+
+<!--    </xpath>-->
+<!--</template>-->
+<template id="custom_products_inherit" inherit_id="website_sale.products">
+<!-- <xpath expr="//div[contains(@class, 'o_wsale_product_grid_wrapper')]" position="attributes">-->
+<!--        <attribute name="style">border:2px solid black;</attribute>-->
+<!--    </xpath>-->
+</template>
+
+
+    </data>
+</odoo>
